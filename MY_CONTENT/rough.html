@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="logo-color.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Raleway:400,700|Montserrat:400,700&display=swap">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Add CSS for the active navigation item indicator (underline) */
+      .nav-link.nav-active {
+        position: relative;
+        color: #007bff; /* Color of the active navigation item */
+      }
+
+      .nav-link.nav-active::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px; /* Height of the indicator */
+        background-color: #007bff; /* Color of the indicator */
+        bottom: 0;
+        left: 0;
+      }
+    </style>
+    <script src="script.js"></script>
+    <title>TAKE YOUR NOTES</title>
+  </head>
+  <body onload="myFunction()" style="margin:0;">
+    <div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <h2>Hello!</h2>
+  <p> <b>Techies 👽 please take your notes and also you can provide notes also</b> </p>
+</div>
+    <script>
+    var myVar;
+
+    function myFunction() {
+      myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('nav');
+            if (window.scrollY > 100) { // You can change 100 to your preferred scroll position
+                header.style.background = '#B6FFFA'; // Change the color to your desired color
+            } else {
+                header.style.background = '#C1FFB3'; // Restore the original color
+            }
+        });
+      </script>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><img src="logo-color.png" alt="Your Logo" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#resources">Resources</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+
+    <script>
+      // Function to update the active navigation item based on section IDs
+      function updateActiveNavItem() {
+        var sections = document.querySelectorAll("section");
+        var navItems = document.querySelectorAll(".nav-link");
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+        sections.forEach(function (section, index) {
+          var sectionId = section.getAttribute("id");
+          var rect = section.getBoundingClientRect();
+
+          if (rect.top <= 50 && rect.bottom >= 50) {
+            // This section is in view
+            navItems.forEach(function (navItem) {
+              navItem.classList.remove("nav-active");
+            });
+            document.querySelector(`a[href="#${sectionId}"]`).classList.add("nav-active");
+          }
+        });
+      }
+
+      // Add scroll event listener to update active navigation item on scroll
+      window.addEventListener("scroll", updateActiveNavItem);
+
+      // Initial call to set the initial active item
+      updateActiveNavItem();
+    </script>
+
+    <!-- Your other sections and content here -->
+    <section id="home">
+      <div id="app" style="display:none;"  class="animate-bottom">
+
+        <div class="title">
+
+          <div class="title-inner">
+            <div class="cafe">
+              <div class="cafe-inner">Take Your</div>
+            </div>
+            <div class="mozart">
+              <div class="mozart-inner">Notes Here</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                 <img src="maths.png" alt="Your Image" width="100%" height="225">
+
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-align:center"><b> M1-calculus and Linear Algebra </b> </text></svg>
+                <div class="card-body">
+                  <p class="card-text">Linear algebra is a branch of mathematics that deals with vector spaces and linear equations, playing a fundamentalrole in various scientific and engineering fields.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                 <img src="py3.png" alt="Your Image" width="88%" height="225">
+    <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-align:center"><b>Python</b></text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                 <img src="ml.png" alt="Your Image" width="88%" height="225">
+            <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-align:center"><b> ML ALGORITHMS </b> </text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+    <img src="ds.png" alt="Your Image" width="88%" height="225">
+
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"> <b>DATA STRUCTURES</b> </text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="DAA.png" alt="Your Image" width="88%" height="225">
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-anchor: middle; text-align:center;"> <b>DAA</b> </text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="cn.jpeg" alt="Your Image" width="88%" height="225">
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-align:center"><b>COMPUTER NETWORKS</b> </text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES </button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                  <img src="os.jpeg" alt="Your Image" width="88%" height="225">
+
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-align:center;"><b> OPERATING SYSTEM </b> </text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="p and s.png" alt="Your Image" width="88%" height="225">
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-align:center;"><b> PROBABILITY AND STATISTICS </b></text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+      <img src="se.png" alt="Your Image" width="88%" height="225">
+
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em" style="text-align:center"> <b>SOFTWARE  ENGINEERING</b> </text></svg>
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">NOTES</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">QUIZZ</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h3 style="text-align:center">ABOUT</h3>
+      <div class="content-div">
+        <ol>
+          <li>Our mission is to empower every student by providing free, high-quality written notes that cater to their educational needs.</li>
+          <li>With our platform, not only can you access free notes, but you can also share your own knowledge by easily sending your notes to others via email.</li>
+          <li>We believe in the power of education and collaborative learning, making it easier for students to excel academically and help their peers succeed.</li>
+        </ol>
+        <br>
+        <h4> <mark>Click </mark>  on the below image to upload your notes .It will be very helpfull to make reading easy for exams. </h4>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSedJunC24phf3Pdgpu6NL1FS19HTtwfDATVfMzaNq5U2XeYRA/viewform"> <img src="FORM.jpg" alt="googleform" width="300" height="200">
+</a>
+  </div>
+
+    </section>
+    <div class="foot">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© CSE WALA <br><br><h6>
+          The page is under development
+        </h6> </span>
+
+      </div>
+
+
+    </footer>
+  </div>
+
+    <!-- The rest of your HTML content -->
+  </body>
+</html>
